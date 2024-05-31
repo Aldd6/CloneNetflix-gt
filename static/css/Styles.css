@@ -1,0 +1,395 @@
+@font-face {
+    font-family: 'netflix';
+    src: url('../../fonts/AvenirNextLTPro-Regular.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'netflix';
+    src: url('../../fonts/AvenirNextLTPro-Bold.otf');
+    font-weight: 700;
+    font-style: bold;
+}
+
+body {
+    background: black;
+    color: white;
+    margin: 0;
+    font-family: 'netflix';
+    padding-bottom: 67px;
+}
+
+a{
+ color: white;
+ text-decoration: none;
+}
+
+.navbar-item{
+    list-style: none;
+    text-align: center;
+}
+
+.navbar{
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-auto-columns: 100px;
+    grid-auto-flow: column;
+    justify-content: space-around;
+}
+
+.header {
+    padding: 15px 15px 100px;
+    position: relative;
+    z-index: 2;
+    background-image: linear-gradient(to bottom, black 0%, black 70%, rgba(0,0,0,0.5) 85%, transparent 100%);
+}
+
+.featured {
+    margin-top: -90px;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.featured-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to top, black 0%,  black 40%, transparent 100%);
+}
+
+.featured-tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.tag::before{
+    content: '•';
+    margin-right: 10px;
+    display: inline-flex;
+    position: relative;
+    top: 1px;
+}
+
+.tag:first-child::before {
+    display: none;
+}
+
+/*Movie CSS*/
+
+.header-info {
+    padding: 15px 15px;
+    position: relative;
+    z-index: 2;
+    background-image: linear-gradient(to bottom, black 0%, black 20%, rgba(0,0,0,0.5) 78%, transparent 100%);
+}
+
+.featured-banner {
+    margin-top: -100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-banner > img {
+    position: relative;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.featured-details-movie {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 2em;
+    background-image: linear-gradient(to top, black 50%, black 50%, transparent 100%);
+}
+
+.featured-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 2em;
+}
+
+.featured-buttons-movie {
+    display: flex;
+}
+
+/*Clase que afecta a los hijos contenidos en la clase padre*/
+.featured-buttons-movie > button {
+    margin: 0.5em;
+}
+
+.button-movie {
+    border-radius: 50%;
+    background: none;
+    width: 2.5em;
+    height: 2.5em;
+    border: 2px solid gray;
+    transition: transform 0.3s, background-color 0.3s, border 0.3s, fill 0.3s;
+}
+
+.icon-movie {
+    display: flex;
+    align-content: center;
+}
+
+.button-movie:hover {
+    transform: translateY(-5px);
+    background-color: white;
+    border: 2px solid white;
+}
+
+.button-movie:hover :is(path,button){
+    fill: black;
+}
+
+.featured-info-movie{
+    padding-top: 2em;
+}
+
+.inline-resume {
+    display: flex;
+    align-items: center;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    color: gray;
+}
+
+.inline-resume-element{
+    padding-right: 0.8em;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.inline-resume-tag {
+    border-radius: 10%;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    padding: 0.2em, 0.5em 0.2em 0.5em;
+    margin-right: 1em;
+}
+
+.featured-sinopsis {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    text-align: justify;
+}
+
+.more-movie {
+    padding: 0 2.5em;
+}
+
+.new-tag {
+    border-color: green;
+    background-color: green;
+}
+
+/*Fin de CSS movie*/
+
+.button {
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 5px 1em 5px .5em;
+    border: none;
+    border-radius: 3px;
+}
+
+.button::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.button-secondary {
+    background: none;
+    color: white;
+    font-size: 1.1em;
+    min-width: 100px;
+    cursor: pointer;
+    border: none;
+}
+
+.button-secondary::before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.icon-plus::before {
+    background: url('../../images/icons/plus.svg');
+}
+
+.icon-play::before {
+    background: url('../../images/icons/play.svg');
+}
+
+.icon-info::before {
+   background: url('../../images/icons/info.svg'); 
+}
+
+.footer {
+    background: black;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1em 0 .5em;
+}
+
+.list-content {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.list-item {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.list-item:first-child {
+    margin: 0;
+}
+
+.list {
+    padding: 0 1em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 2em;
+}
+
+.tabs {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    list-style: none;
+    color: #6e6e6e;
+}
+
+.tabs a {
+    color: #6e6e6e;
+}
+
+.tab {
+    text-align: center;
+}
+
+.tab svg {
+    display: block;
+    margin: auto;
+    font-size: .9em;
+}
+
+.tab-icon path {
+    fill: #6e6e6e;
+}
+
+.tab:hover :is(path, span) {
+    fill: white;
+    color: white;
+}
+
+/* CSS Proximamente*/
+
+.prox-title-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 2em;
+    background-image: linear-gradient(to top, black 25%, black 50%, transparent 100%);
+    text-align: center;
+}
+
+.content {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    justify-content: space-evenly;
+    animation: fade-in 1s linear;
+}
+
+.gallery-item {
+    margin: 2px;
+    height: 300px;
+    width: 206px;
+    border-radius: 5px;
+    transition: scale 1s;
+}
+
+.gallery-item:hover {
+    scale: 1.2;
+}
+
+.prox-featured-banner {
+    margin-top: -150px;
+    position: relative;
+    overflow: hidden;
+}
+
+.prox-featured-banner >img {
+    z-index: 0;
+    width: 100%;
+}
+
+.button-suscribe {
+    padding: 0.5em;
+    width: 150px;
+    background-color: red;
+    color: white;
+    border: none;
+    margin-bottom: 1em;
+    border-radius: 15px;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.button-suscribe:hover {
+    transform: translateY(-5px);
+    background-color: white;
+    color: black;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+/*FIN CSS Proximamente*/
